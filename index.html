@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Braille Learning Device</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2>E-Braille Learning Device</h2>
+        <p><b>Final Year Project</b></p>
+    </header>
+
+    <section class="video-section">
+        <h3>Project Demonstration</h3>
+        <video controls>
+            <source src="./VID-20230426-WA0000.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section class="details">
+        <h3>About the Project</h3>
+        <p>The E-Braille Learning Device is designed to help visually impaired individuals learn Braille effectively
+            through interactive methods.</p>
+        <ul class="styled-list">
+            <li>Three learning modes: Speak & Practice, Type & Practice, and Quiz Mode.</li>
+            <li>Integrated Braille keyboard and solenoid actuators.</li>
+            <li>Audio-assisted learning guidance.</li>
+            <li>Compact, cost-effective, and user-friendly design.</li>
+        </ul>
+    </section>
+
+    <section class="gallery">
+        <h3>Project Images</h3>
+        <div class="image-container">
+            <img src="./IMG_20250308_141303.jpg" alt="Project Image 1">
+            <img src="./IMG_20250308_141411.jpg" alt="Project Image 2">
+        </div>
+    </section>
+
+    <section class="report">
+        <h3>Download Project Report</h3>
+        <p>The report contains detailed information on project development, methodology, and implementation.</p>
+        <a href="./E-Braille report.pdf" download class="download-button" target="_blank">Download Report</a>
+    </section>
+
+    <section class="contact">
+        <h3>Contact</h3>
+        <p>For inquiries, please reach out via email.</p>
+        <button id="messageButton">Click Me</button>
+        <p id="message" class="hidden">Thank you for visiting!</p>
+    </section>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").classList.toggle("hidden");
+        }
+
+        document.getElementById("messageButton").addEventListener("click", showMessage);
+    </script>
+</body>
+
+</html>
