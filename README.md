@@ -59,10 +59,3 @@ To assist the **visually impaired** by creating a low-cost, electronic Braille o
 
 This project was built for educational and accessibility awareness purposes.  
 Inspired by the need for **inclusive tech solutions**. 🌍❤️
-
----
-
-## 📬 Feedback
-
-Feel free to raise an issue or suggest improvements.  
-Let’s make tech accessible to everyone!
