@@ -1,61 +1,100 @@
-# 🔠 E-Braille – Electronic Braille Converter
+<h1 align="center">🔠 E-Braille: Assistive Braille Learning Platform 🔠</h1>
 
-**E-Braille** is an electronics-based project that converts English text into **Braille** using hardware components. It helps visually impaired individuals by making text accessible through tactile Braille output. ♿🧑‍🦯
+<p align="center">
+  <img src="https://media.giphy.com/media/jpVnC65DmYeyRL4LHS/giphy.gif" width="280" alt="Assistive Technology for Learning GIF"/>
+</p>
 
----
+<p align="center">
+  <strong>Empowering visually impaired individuals through self-paced, gamified, and cost-effective Braille learning.</strong>
+</p>
 
-## 📸 Project Demo
-
-Here’s how the project setup looks:
-
-![E-Braille Hardware Setup](IMG_20250308_141303.jpg)  
-*Prototype with components: Raspberry Pi, relay module, speakers, switches, and circuit board*
-
----
-
-## 💡 What It Does
-
-- Accepts English characters as input
-- Converts each character into Braille
-- Triggers tactile output using relays & pins
-- Outputs sound via speakers for audio feedback 🔉
+<p align="center">
+  <b>🔊 Learn Braille. 📚 Self-paced. 🌐 Inclusive. 🎮 Gamified.</b>
+</p>
 
 ---
 
-## 🛠️ Components Used
+## 📘 Project Overview
 
-- 🤖 **Raspberry Pi**
-- ⚡ **Relay Module**
-- 🔊 **Speakers** (Zebronics)
-- 🎛️ **Switches**
-- 🔌 **Wires and Breadboard/PCB**
-- 🧠 **Python Code** for processing and control
+**E-Braille** is a self-learning Braille education platform designed for individuals who are blind or visually impaired.  
+Using tactile hardware, voice guidance, and gamified modules, it makes Grade 1 Braille accessible, engaging, and affordable.
 
----
-
-## 🚀 How It Works
-
-1. User enters English text (via software interface or pre-coded)
-2. Python code runs on Raspberry Pi to convert it into Braille mapping
-3. Relays are activated to move pins representing Braille dots
-4. Speaker gives audio confirmation (optional)
+🔗 [Live Demo Website](https://adithyasalian23.github.io/E-Braille/)  
+📁 [Project Repository](https://github.com/AdithyaSalian23/E-Braille)  
+📄 `E-Braille report.pdf` available in the repository
 
 ---
 
-## 🎯 Objective
+## 🎯 Objectives
 
-To assist the **visually impaired** by creating a low-cost, electronic Braille output device using simple components and programming.
-
----
-
-## 📂 Project Structure
-
-- `main.py` – Python script for controlling relays and logic
-- `IMG_20250308_141411.jpg` – Hardware setup image
+- Enable independent learning of Braille through a digital platform
+- Replace bulky, expensive Braille learning tools (≈$2000) with an open-source, affordable solution (≈₹10,000)
+- Encourage literacy and confidence in visually impaired users
 
 ---
 
-## 🙌 Acknowledgments
+## 🧠 Key Features
 
-This project was built for educational and accessibility awareness purposes.  
-Inspired by the need for **inclusive tech solutions**. 🌍❤️
+- 🔉 **Voice-Guided Learning:** Audio prompts aid navigation and feedback
+- 🧩 **Gamified Modes:** Practice & Quiz-based interaction like Duolingo
+- ✋ **Tactile Feedback:** Hardware generates Braille characters using solenoids
+- 📊 **Self-Evaluation:** Real-time response validation with multi-attempt logic
+- 💰 **Low-Cost Hardware:** Raspberry Pi + relays + solenoids (open hardware)
+
+---
+
+## 🛠 Technologies Used
+
+| Domain            | Tools / Components                          |
+|-------------------|---------------------------------------------|
+| 🎨 Frontend       | HTML, CSS, JavaScript                       |
+| 🧠 Backend Logic  | Python                                      |
+| 💡 Hardware       | Raspberry Pi 3B, Solenoid Actuators, Relays |
+| 🔊 Audio Output   | Speakers with pre-recorded guidance         |
+
+---
+
+## 🧪 Modes of Operation
+
+| Mode        | Description                                                   |
+|-------------|---------------------------------------------------------------|
+| ✍️ Practice | Learn letters & numbers by feeling Braille output             |
+| 🧠 Quiz     | Randomized tests with voice instructions and retry mechanism  |
+| 🎮 Interactive | Feedback-based typing using a Braille keypad                 |
+
+---
+
+## 📷 Project Snapshot
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AdithyaSalian23/E-Braille/main/snapshot.jpg" width="600" alt="Project Snapshot">
+</p>
+
+---
+
+## 🚀 Future Scope
+
+- 📚 Grade 2 Braille support
+- 🌐 Multilingual voice guides
+- 🔗 Integration with online learning platforms
+- 📱 Mobile-friendly interface
+
+---
+
+## 🤝 Acknowledgements
+
+Developed as part of an inclusive tech initiative to democratize access to Braille education in India and beyond.
+
+Special thanks to all academic mentors, open-source contributors, and accessibility advocates who inspired this effort.
+
+---
+
+## 📬 Contact
+
+- 🔗 [LinkedIn](https://www.linkedin.com/in/adithya-salian/)
+- 📧 adithyasalian23@gmail.com
+
+---
+
+> _"The only thing worse than being blind is having sight but no vision." — Helen Keller_
+
