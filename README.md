@@ -67,7 +67,7 @@ Using tactile hardware, voice guidance, and gamified modules, it makes Grade 1 B
 ## 📷 Project Snapshot
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AdithyaSalian23/E-Braille/main/snapshot.jpg" width="600" alt="Project Snapshot">
+  <img src="IMG_20250308_141303.jpg" width="600" alt="Project Snapshot">
 </p>
 
 ---
@@ -92,7 +92,7 @@ Special thanks to all academic mentors, open-source contributors, and accessibil
 ## 📬 Contact
 
 - 🔗 [LinkedIn](https://www.linkedin.com/in/adithya-salian/)
-- 📧 adithyasalian23@gmail.com
+- 📧 adithyasalian6@gmail.com
 
 ---
 
