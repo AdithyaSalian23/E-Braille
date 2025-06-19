@@ -89,6 +89,11 @@ Special thanks to all academic mentors, open-source contributors, and accessibil
 
 ---
 
+## 📝 License
+This project is open-source and free to use under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
 ## 📬 Contact
 
 - 🔗 [LinkedIn](https://www.linkedin.com/in/adithya-salian/)
