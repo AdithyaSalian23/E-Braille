@@ -1,67 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Braille Learning Device</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Braille — Learn Braille by Touch</title>
+<meta name="description" content="E-Braille is a self-learning tactile Braille device built to make Grade 1 Braille literacy affordable and accessible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340..600&family=Space+Grotesk:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h2>E-Braille Learning Device</h2>
-        <p><b>Final Year Project</b></p>
-    </header>
 
-    <section class="video-section">
-        <h3>Project Demonstration</h3>
-        <video controls>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      E-Braille
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#modes">Modes</a>
+      <a href="#build">Build</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#report">Report</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/AdithyaSalian23/E-Braille" target="_blank" rel="noopener">View on GitHub ↗</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:1px solid var(--line); padding-top:76px;">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Final year project · Grade 1 Braille</p>
+        <h1>Braille, taught <em>by touch</em>,<br>without a teacher in the room.</h1>
+        <p class="lead">E-Braille is a self-learning tactile device that raises real Braille dots under a solenoid array, and walks a blind or visually impaired learner through reading and typing Grade&nbsp;1 Braille using nothing but audio guidance.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#modes">See how it teaches</a>
+          <a class="btn btn-ghost" href="./E-Braille report.pdf" target="_blank">Read the report</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num">₹10K</div><div class="lbl">build cost, ~8× cheaper than commercial readers</div></div>
+          <div><div class="num">15M+</div><div class="lbl">blind individuals in India alone</div></div>
+          <div><div class="num">1%</div><div class="lbl">Braille literacy rate in India today</div></div>
+        </div>
+      </div>
+
+      <div class="translator" id="translator">
+        <div class="t-label">Try it — type a word, feel the logic</div>
+        <input id="brailleInput" type="text" maxlength="14" placeholder="type here…" value="learn" autocomplete="off" aria-label="Type text to see it rendered in Braille dots">
+        <div class="cells" id="cellsOutput" aria-live="polite"></div>
+        <p class="hint">This is what the device's solenoid array physically raises, letter by letter. Supports a–z and 0–9.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap story-grid">
+      <div>
+        <p class="eyebrow">Why this exists</p>
+        <p class="pull">"The braille literacy rate in India is just 1%, against a general literacy rate of 77.7%."</p>
+      </div>
+      <div class="story-body reveal">
+        <p>Of the world's 37 million blind people, an estimated 90% live in developing countries — around 15 million of them in India, the highest number of any country. Commercial e-Braille displays cost roughly $2,000 in the US and ₹70,000–1,00,000 in India, putting them out of reach for most of the people who need them.</p>
+        <p>E-Braille was built to close that gap: a compact, self-contained Raspberry Pi device that teaches Grade 1 Braille through audio-guided, gamified practice — no internet connection, no instructor, and no assumption that the learner already knows where to start.</p>
+        <p>It runs three learning modes — Practice Alphabets, Practice Numbers, and a Duolingo-style Quiz — and reads every prompt aloud, so the whole experience can be used independently from power-on to mastery.</p>
+        <div class="fact-strip">
+          <div><div class="num">$2,000</div><div class="lbl">typical cost of a commercial Braille display</div></div>
+          <div><div class="num">6</div><div class="lbl">solenoids forming one physical Braille cell</div></div>
+          <div><div class="num">3</div><div class="lbl">learning modes: practice, numbers, quiz</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section id="modes">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it teaches</p>
+        <h2>Three modes, one Braille cell.</h2>
+        <p>Every mode drives the same six-solenoid cell — what changes is the pacing and the pressure. Beginners get untimed repetition; confident learners get tested.</p>
+      </div>
+      <div class="modes-grid">
+        <div class="mode-card">
+          <span class="mode-tag">Mode 01</span>
+          <h3>Practice Alphabets</h3>
+          <p>Cycles through A–Z. The device raises each letter's pattern, speaks "Type letter A," and waits — no timer — while the learner feels the cell and types it back on the Braille keypad before moving on.</p>
+          <div class="mode-cell-demo" aria-hidden="true"></div>
+        </div>
+        <div class="mode-card">
+          <span class="mode-tag">Mode 02</span>
+          <h3>Practice Numbers</h3>
+          <p>The same untimed loop, run across 0–9, reinforcing the numeric patterns learners will need for dates, addresses, and everyday reading.</p>
+          <div class="mode-cell-demo" aria-hidden="true"></div>
+        </div>
+        <div class="mode-card">
+          <span class="mode-tag">Mode 03</span>
+          <h3>Quiz Mode</h3>
+          <p>Five random alphanumeric characters, three attempts each. Get it wrong twice and the device raises the correct pattern for you to feel and learn, then asks again — like Duolingo, but built for fingertips.</p>
+          <div class="mode-cell-demo" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE / BUILD -->
+  <section id="build">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Under the hood</p>
+        <h2>From a button press to a raised dot.</h2>
+        <p>A Raspberry Pi 3B reads the keypad, drives an 8-channel relay board, and the relays switch enough current to fire six solenoid actuators — the electromechanical "fingers" that physically form each Braille pattern.</p>
+      </div>
+      <div class="arch-wrap">
+        <div class="flow reveal">
+          <div class="flow-step">
+            <span class="flow-num">01</span>
+            <div><h4>Button press</h4><p>One of nine push buttons signals a mode change, an Enter, or a Next — read on Raspberry Pi GPIO pins 19, 21 and 23.</p></div>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">02</span>
+            <div><h4>Audio prompt</h4><p>The Pi speaks the next instruction through the speaker — "Type letter A," "Correct, press next," or the mode's opening cue.</p></div>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">03</span>
+            <div><h4>activateBrailleSolenoids()</h4><p>The controller looks up the dot pattern for the target character and fires the matching solenoids through the relay board, since GPIO pins alone can't supply the current a solenoid draws.</p></div>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">04</span>
+            <div><h4>Read &amp; respond</h4><p>The learner feels the raised dots and types the combination back on the Braille keypad.</p></div>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">05</span>
+            <div><h4>checkLetterTyped()</h4><p>Input is compared against the expected pattern; a match triggers "Correct, press next" and advances the sequence.</p></div>
+          </div>
+        </div>
+
+        <div class="parts-list reveal">
+          <div class="t-title">Hardware, as built</div>
+          <ul>
+            <li><span>Raspberry Pi 3B</span><span>BCM2387, 1.2GHz quad-core</span></li>
+            <li><span>Solenoid actuators</span><span>×6, 6V / 1.2A each</span></li>
+            <li><span>Relay board</span><span>8-channel, 5V</span></li>
+            <li><span>Push buttons</span><span>×9, mechanical switch</span></li>
+            <li><span>Power supply</span><span>12V, 3A adapter</span></li>
+            <li><span>Speaker</span><span>pre-recorded audio guidance</span></li>
+            <li><span>Enclosure</span><span>breadboard + prototype casing</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The build, in the flesh</p>
+        <h2>Prototype and demonstration.</h2>
+        <p>Photos of the assembled solenoid array and relay board, and a short demo of the device running.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="tall">
+          <video controls preload="metadata">
             <source src="./VID-20230426-WA0000.mp4" type="video/mp4">
             Your browser does not support the video tag.
-        </video>
-    </section>
+          </video>
+          <figcaption>Project demonstration — device walkthrough</figcaption>
+        </figure>
+        <figure>
+          <img src="./IMG_20250308_141303.jpg" alt="E-Braille prototype: Raspberry Pi, relay board, and speakers wired inside the enclosure" loading="lazy">
+          <figcaption>Controller &amp; relay assembly</figcaption>
+        </figure>
+        <figure>
+          <img src="./IMG_20250308_141411.jpg" alt="E-Braille solenoid array mounted on a perforated board forming the Braille cell" loading="lazy">
+          <figcaption>Six-solenoid Braille cell</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-    <section class="details">
-        <h3>About the Project</h3>
-        <p>The E-Braille Learning Device is designed to help visually impaired individuals learn Braille effectively
-            through interactive methods.</p>
-        <ul class="styled-list">
-            <li>Three learning modes: Speak & Practice, Type & Practice, and Quiz Mode.</li>
-            <li>Integrated Braille keyboard and solenoid actuators.</li>
-            <li>Audio-assisted learning guidance.</li>
-            <li>Compact, cost-effective, and user-friendly design.</li>
-        </ul>
-    </section>
-
-    <section class="gallery">
-        <h3>Project Images</h3>
-        <div class="image-container">
-            <img src="./IMG_20250308_141303.jpg" alt="Project Image 1">
-            <img src="./IMG_20250308_141411.jpg" alt="Project Image 2">
+  <!-- REPORT / CONTACT -->
+  <section id="report" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="report-band reveal">
+        <div>
+          <h2>Read the full project report.</h2>
+          <p>Methodology, circuit diagrams, mode flowcharts, and implementation notes — all documented from background research through to the finished build.</p>
         </div>
-    </section>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a class="btn btn-solid" href="./E-Braille report.pdf" download target="_blank">Download PDF</a>
+          <a class="btn btn-ghost" href="https://github.com/AdithyaSalian23/E-Braille" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="report">
-        <h3>Download Project Report</h3>
-        <p>The report contains detailed information on project development, methodology, and implementation.</p>
-        <a href="./E-Braille report.pdf" download class="download-button" target="_blank">Download Report</a>
-    </section>
+</main>
 
-    <section class="contact">
-        <h3>Contact</h3>
-        <p>For inquiries, please reach out via email.</p>
-        <button id="messageButton">Click Me</button>
-        <p id="message" class="hidden">Thank you for visiting!</p>
-    </section>
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        E-Braille
+      </a>
+      <p>A self-learning tactile Braille device — final year project.</p>
+      <button id="messageButton" class="btn btn-ghost" style="margin-top:16px;">Say hello</button>
+      <p id="message" class="hidden" role="status">Thank you for visiting — reach out any time.</p>
+    </div>
+    <div>
+      <div class="fl">
+        <a href="mailto:adithyasalian6@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/adithya-salian/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/AdithyaSalian23/E-Braille" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p>© 2026 E-Braille Project. Open-source under MIT.</p>
+    </div>
+  </div>
+</footer>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").classList.toggle("hidden");
-        }
+<script>
+  // ---------- Braille dot patterns (Grade 1) ----------
+  const PATTERNS = {
+    a:[1], b:[1,2], c:[1,4], d:[1,4,5], e:[1,5], f:[1,2,4], g:[1,2,4,5],
+    h:[1,2,5], i:[2,4], j:[2,4,5], k:[1,3], l:[1,2,3], m:[1,3,4], n:[1,3,4,5],
+    o:[1,3,5], p:[1,2,3,4], q:[1,2,3,4,5], r:[1,2,3,5], s:[2,3,4], t:[2,3,4,5],
+    u:[1,3,6], v:[1,2,3,6], w:[2,4,5,6], x:[1,3,4,6], y:[1,3,4,5,6], z:[1,3,5,6],
+    '1':[1],'2':[1,2],'3':[1,4],'4':[1,4,5],'5':[1,5],'6':[1,2,4],'7':[1,2,4,5],
+    '8':[1,2,5],'9':[2,4],'0':[2,4,5]
+  };
+  const NUMBER_SIGN = [3,4,5,6];
 
-        document.getElementById("messageButton").addEventListener("click", showMessage);
-    </script>
+  function buildCell(dotsOn){
+    const cell = document.createElement('div');
+    cell.className = 'braille-cell';
+    // dot order in grid: 1 4 / 2 5 / 3 6
+    const order = [1,4,2,5,3,6];
+    order.forEach(n=>{
+      const d = document.createElement('div');
+      d.className = 'dot' + (dotsOn.includes(n) ? ' on' : '');
+      cell.appendChild(d);
+    });
+    return cell;
+  }
+
+  function renderTranslation(text){
+    const out = document.getElementById('cellsOutput');
+    out.innerHTML = '';
+    const chars = text.toLowerCase().split('').slice(0,14);
+    let lastWasDigit = false;
+
+    chars.forEach(ch=>{
+      if(ch === ' '){
+        lastWasDigit = false;
+        const unit = document.createElement('div');
+        unit.className = 'cell-unit';
+        unit.appendChild(buildCell([]));
+        const label = document.createElement('span');
+        label.className = 'cell-char';
+        label.textContent = '·';
+        unit.appendChild(label);
+        out.appendChild(unit);
+        return;
+      }
+      const isDigit = /[0-9]/.test(ch);
+      if(isDigit && !lastWasDigit){
+        const unit = document.createElement('div');
+        unit.className = 'cell-unit';
+        unit.appendChild(buildCell(NUMBER_SIGN));
+        const label = document.createElement('span');
+        label.className = 'cell-char';
+        label.textContent = '#';
+        unit.appendChild(label);
+        out.appendChild(unit);
+      }
+      lastWasDigit = isDigit;
+
+      const pattern = PATTERNS[ch];
+      const unit = document.createElement('div');
+      unit.className = 'cell-unit';
+      unit.appendChild(buildCell(pattern || []));
+      const label = document.createElement('span');
+      label.className = 'cell-char';
+      label.textContent = ch;
+      unit.appendChild(label);
+      out.appendChild(unit);
+    });
+  }
+
+  const input = document.getElementById('brailleInput');
+  input.addEventListener('input', ()=> renderTranslation(input.value));
+  renderTranslation(input.value);
+
+  // ---------- decorative mini demos on mode cards ----------
+  const demoPatterns = [[1,2,4,5],[1,3,6],[2,3,4]]; // g, u, s — arbitrary flavour dots
+  document.querySelectorAll('.mode-cell-demo').forEach((el,i)=>{
+    el.appendChild(buildCell(demoPatterns[i % demoPatterns.length]));
+  });
+
+  // ---------- contact message toggle ----------
+  document.getElementById('messageButton').addEventListener('click', ()=>{
+    document.getElementById('message').classList.toggle('hidden');
+  });
+
+  // ---------- scroll reveal ----------
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+</script>
+
 </body>
-
 </html>
